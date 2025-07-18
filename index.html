@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Game</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1 id="heading">Bat Ball Stump Game</h1>
+    <div id="center">
+        <button onclick="
+     let computerChoice = generateComputerchoice();
+
+     let result = getresult('Bat',computerChoice);
+
+     showResult('Bat',computerChoice,result);
+
+     document.querySelector('#user').innerText = Score.userScore;
+     document.querySelector('#comp').innerText = Score.compScore;
+     document.querySelector('#tie').innerText = Score.Tie;
+    
+    " class="btn btn-outline-primary">Bat</button>
+        <button onclick="
+    computerChoice =  generateComputerchoice();
+
+    result = getresult('Ball',computerChoice);
+
+    showResult('Ball',computerChoice,result);
+
+    document.querySelector('#user').innerText = Score.userScore;
+     document.querySelector('#comp').innerText = Score.compScore;
+     document.querySelector('#tie').innerText = Score.Tie;
+    
+
+
+    " class="btn btn-outline-primary">Ball</button>
+        <button onclick="
+    computerChoice =  generateComputerchoice();
+
+    result = getresult('Stump',computerChoice);
+
+    showResult('Stump',computerChoice,result);
+
+    document.querySelector('#user').innerText = Score.userScore;
+     document.querySelector('#comp').innerText = Score.compScore;
+     document.querySelector('#tie').innerText = Score.Tie;
+
+    " class="btn btn-outline-primary">Stump</button>
+
+    </div>
+    <div id="showScore">
+        <div class="badge text-bg-success text-wrap" style="width: 15rem;">
+            <p>Your Score</p>
+            <h1 id="user"></h1>
+        </div>
+        <div class="badge text-bg-danger text-wrap" style="width: 15rem;">
+            <p>Computer Score</p>
+            <h1 id="comp"></h1>
+        </div>
+        <div class="badge text-bg-primary text-wrap" style="width: 15rem;">
+            <p>Tie Score</p>
+            <h1 id="tie"></h1>
+        </div>
+    </div>
+    <div class="resetbut">
+        <button onclick="
+        computerChoice =  generateComputerchoice();
+
+    // result = getresult('Reset',computerChoice);
+
+
+    resetBut('Reset');
+
+    // document.querySelector('#user').innerText = Score.userScore;
+    //  document.querySelector('#comp').innerText = Score.compScore;
+    //  document.querySelector('#tie').innerText = Score.Tie;
+
+     
+
+     document.querySelector('#user').innerText = 0;
+     document.querySelector('#comp').innerText = 0;
+     document.querySelector('#tie').innerText = 0;
+    
+    " class="btn btn-danger">Reset</button>
+    </div>
+
+
+    <script src="./first.js"></script>
+</body>
+
+</html>
