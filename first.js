@@ -3,11 +3,11 @@
 // var Tie = 0;
 let Scorestr = localStorage.getItem('Score');
 let Score = JSON.parse(Scorestr) || {
-        userScore: 0,
-        compScore: 0,
-        Tie: 0,
+    userScore: 0,
+    compScore: 0,
+    Tie: 0,
 
-    }
+}
 // if (Scorestr !== undefined) {
 //     Score = JSON.parse(Scorestr);
 // } else {
@@ -18,9 +18,9 @@ let Score = JSON.parse(Scorestr) || {
 
 //     }
 //};
-Score.displayScore = function () {
-    return `Win: ${Score.userScore} loss: ${Score.compScore} Tie: ${Score.Tie}`
-};
+// Score.displayScore = function () {
+//     return `Win: ${Score.userScore} loss: ${Score.compScore} Tie: ${Score.Tie}`
+// };
 function generateComputerchoice() {
     // const userChoiceMsg = 'you have choice Bat';
     let randomNumber = Math.floor(Math.random() * 3);
@@ -116,23 +116,56 @@ function getresult(userChoice, computerMove) {
     }
 }
 
-function resetBut (userChoice){
-    if (userChoice === 'Reset'){
+function resetBut(userChoice, computerMove, result) {
+    localStorage.setItem('Score', JSON.stringify(Score));
+    if (userChoice !== 'Reset') {
+        document.querySelector('#Win').innerText = `you have choice ${userChoice}`;
+        document.querySelector('#loss').innerText = `computer choice is ${computerMove}`;
+        document.querySelector('#ret').innerText = `${result}`;
+    }
+    // else if (userChoice === 'Reset') {
+    //     localStorage.clear();
+    //     Score.userScore = 0;
+    //     Score.compScore = 0;
+    //     Score.Tie = 0;
+        
+    // }
+     else {
         localStorage.clear();
         Score.userScore = 0;
-        Score.compScore= 0;
-        Score.Tie= 0;
+        Score.compScore = 0;
+        Score.Tie = 0;
+        document.querySelector('#Win').innerText = '';
+        document.querySelector('#loss').innerText = '';
+        document.querySelector('#ret').innerText = '';
     }
+
 };
 
-function showResult(userChoice, computerMove, result) {
-    localStorage.setItem('Score', JSON.stringify(Score));
-    alert(`you have choice ${userChoice}. computer choice is ${computerMove} 
-        
-${result}
-        
-${Score.displayScore()}`);
-}
+// function displaymove(userChoice, computerMove, result) {
+//     localStorage.setItem('Score', JSON.stringify(Score));
+//     if (userChoice !== 'Reset') {
+//         document.querySelector('#Win').innerText = `you have choice ${userChoice}`;
+//         document.querySelector('#loss').innerText = `computer choice is ${computerMove}`;
+//         document.querySelector('#ret').innerText = `${result}`;
+//     }
+//     else {
+//         document.querySelector('#Win').innerText = '';
+//         document.querySelector('#loss').innerText = '';
+//         document.querySelector('#ret').innerText = '';
+//     }
+// }
+
+// function showResult(userChoice, computerMove, result) {
+//     localStorage.setItem('Score', JSON.stringify(Score));
+//     // document.querySelector('#Win').innerText = `you have choice ${userChoice}`;
+
+// //     alert(`you have choice ${userChoice}. computer choice is ${computerMove} 
+
+// // ${result}
+
+// // ${Score.displayScore()}`);
+// }
 
 document.querySelector('#user').innerText = Score.userScore;
 document.querySelector('#comp').innerText = Score.compScore;

@@ -18,19 +18,24 @@
 
      let result = getresult('Bat',computerChoice);
 
-     showResult('Bat',computerChoice,result);
+    //  showResult('Bat',computerChoice,result);
+    // displaymove('Bat',computerChoice,result);
+    resetBut('Bat',computerChoice,result);
 
      document.querySelector('#user').innerText = Score.userScore;
      document.querySelector('#comp').innerText = Score.compScore;
      document.querySelector('#tie').innerText = Score.Tie;
     
-    " class="btn btn-outline-primary">Bat</button>
+    " class="but"><img src="./image/bat.png" alt="Bat"></button>
         <button onclick="
     computerChoice =  generateComputerchoice();
 
     result = getresult('Ball',computerChoice);
 
-    showResult('Ball',computerChoice,result);
+    // showResult('Ball',computerChoice,result);
+
+    // displaymove('Ball',computerChoice,result);
+    resetBut('Ball',computerChoice,result);
 
     document.querySelector('#user').innerText = Score.userScore;
      document.querySelector('#comp').innerText = Score.compScore;
@@ -38,20 +43,33 @@
     
 
 
-    " class="btn btn-outline-primary">Ball</button>
+    " class="but"><img src="./image/ball.png" alt="Ball"></button>
         <button onclick="
     computerChoice =  generateComputerchoice();
 
     result = getresult('Stump',computerChoice);
 
-    showResult('Stump',computerChoice,result);
+    // showResult('Stump',computerChoice,result);
+
+    // displaymove('Stump',computerChoice,result);
+    resetBut('Stump',computerChoice,result);
 
     document.querySelector('#user').innerText = Score.userScore;
      document.querySelector('#comp').innerText = Score.compScore;
      document.querySelector('#tie').innerText = Score.Tie;
 
-    " class="btn btn-outline-primary">Stump</button>
+    " class="but"><img src="./image/stump.png" alt="Stump"></button>
 
+    </div>
+    <div class="Showmove">
+        <p id="Win"></p>
+        <p id="loss"></p>
+        <p id="ret"></p>
+        <!-- <ul class="list-group list-group-flush">
+                <li class="list-group-item"><p id="Win"></p></li>
+                <li class="list-group-item"><p id="loss"></p></li>
+                <li class="list-group-item"><p id="ret"></p></li>
+            </ul> -->
     </div>
     <div id="showScore">
         <div class="badge text-bg-success text-wrap" style="width: 15rem;">
@@ -74,7 +92,10 @@
     // result = getresult('Reset',computerChoice);
 
 
-    resetBut('Reset');
+    // resetBut('Reset');
+     resetBut('Reset',computerChoice,result);
+
+    // displaymove('Reset',computerChoice,result);
 
     // document.querySelector('#user').innerText = Score.userScore;
     //  document.querySelector('#comp').innerText = Score.compScore;

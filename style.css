@@ -16,12 +16,21 @@ body {
     justify-content: center;
 }
 
-.btn {
+.but {
     margin: 20px;
-    min-width: 100px;
-    margin-bottom: 100px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-radius: 60px;
+    background-color: rgb(164, 212, 130);
+    border: solid rgb(0, 0, 255) 3px;
 }
-
+.but img{
+    height: 75px;
+}
+.Showmove{
+    text-align: center;
+}
 p {
     font-size: 25px;
 }
@@ -45,7 +54,7 @@ h1 {
 
 .resetbut{
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .resetbut button{
