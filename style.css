@@ -22,8 +22,11 @@ body {
     height: 120px;
     margin-bottom: 20px;
     border-radius: 60px;
-    background-color: rgb(164, 212, 130);
-    border: solid rgb(0, 0, 255) 3px;
+    /* background-color: rgb(164, 212, 130); */
+    border: none;
+}
+.but:hover{
+    border: solid rgb(105, 0, 68) 5px;
 }
 .but img{
     height: 75px;
